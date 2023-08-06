@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sidebar</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-gradient-to-t from-violet-950 to-violet-700 h-screen text-white"
+  >
+    <div class="flex w-screen h-screen">
+      <div
+        class="w-[0px] md:w-[300px] duration-200 overflow-hidden bg-gray-900 translate-x-[-100%] md:translate-x-0"
+        id="sidebar"
+      >
+        <div class="w-[300px] overflow-auto">
+          <div class="text-2xl border-b-[1px] border-gray-700 px-10 py-4">
+            Logo
+          </div>
+
+          <div class="py-4 flex flex-col mt-5">
+            <a
+              href=""
+              class="flex items-center gap-3 px-10 py-3 hover:bg-gray-800"
+            >
+              <ion-icon name="contact"></ion-icon> User Profile</a
+            >
+            <a
+              href=""
+              class="flex items-center gap-3 px-10 py-3 hover:bg-gray-800"
+              ><ion-icon name="lock"></ion-icon> Authentication</a
+            >
+            <a
+              href=""
+              class="flex items-center gap-3 px-10 py-3 hover:bg-gray-800"
+              ><ion-icon name="apps"></ion-icon> Account</a
+            >
+            <a
+              href=""
+              class="flex items-center gap-3 px-10 py-3 hover:bg-gray-800"
+              ><ion-icon name="business"></ion-icon> Corporate</a
+            >
+            <a
+              href=""
+              class="flex items-center gap-3 px-10 py-3 hover:bg-gray-800"
+              ><ion-icon name="logo-facebook"></ion-icon> Social</a
+            >
+            <a
+              href=""
+              class="flex items-center gap-3 px-10 py-3 hover:bg-gray-800"
+              ><ion-icon name="logo-facebook"></ion-icon> Blog</a
+            >
+            <a
+              href=""
+              class="flex items-center gap-3 px-10 py-3 hover:bg-gray-800"
+              ><ion-icon name="body"></ion-icon> About</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="grow px-10 py-4" id="content">
+        <ion-icon
+          id="menuToggleBtn"
+          name="menu"
+          class="text-3xl cursor-pointer"
+        ></ion-icon>
+      </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script>
+      let toggleButton = document
+        .querySelector("#menuToggleBtn")
+        .addEventListener("click", () => {
+          let sidebar = document.querySelector("#sidebar");
+          sidebar.classList.toggle("md:translate-x-[-100%]");
+          sidebar.classList.toggle("translate-x-[-100%]");
+          sidebar.classList.toggle("md:w-[0px]");
+          if (sidebar.classList.contains("w-[0px]")) {
+            sidebar.classList.remove("w-[0px]");
+            sidebar.classList.add("w-[300px]");
+          } else {
+            sidebar.classList.add("w-[0px]");
+            sidebar.classList.remove("w-[300px]");
+          }
+        });
+    </script>
+  </body>
+</html>
